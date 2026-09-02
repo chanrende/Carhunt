@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "carhunt"
+version = "0.1.0"
+description = "Lernprojekt: agentengestützte Suche nach passenden Gebrauchtwagen-Angeboten"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.12",    # ab 2.12 offiziell mit Python 3.14 kompatibel
+    "pyyaml>=6.0.3",     # ab 6.0.3 mit Wheels für Python 3.14
+    "anthropic>=0.40",   # reines Python, keine kompilierten Anteile -> unkritisch
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4",       # ab 8.4 mit Python-3.14-Unterstützung
+    "ruff>=0.5",         # eigenständiges Programm, unabhängig von der Python-Version
+]
+
+[project.scripts]
+carhunt = "carhunt.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+carhunt = ["sources/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

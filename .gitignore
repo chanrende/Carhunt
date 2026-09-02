@@ -1,0 +1,16 @@
+# Virtuelle Umgebung
+.venv/
+
+# Python-Artefakte
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+
+# Tool-Caches
+.pytest_cache/
+.ruff_cache/
+
+# Lokale Daten & Geheimnisse – gehören NIE ins Repository
+*.sqlite3
+.env

@@ -1,0 +1,33 @@
+# Dein Suchprofil.
+# Hier änderst du deine Kriterien – ohne eine Zeile Code anzufassen.
+
+max_price_eur: 3000      # harte Kaufpreisgrenze
+capital_eur: 20000       # nur zur Info (verfügbares Eigenkapital), filtert nichts
+
+brands:
+  - Toyota
+  - Honda
+  - Suzuki
+  - Kia
+  - Hyundai
+  - VW
+  - Citroen
+
+# Kaufweise: alles außer Leasing
+excluded_purchase_types:
+  - leasing
+
+max_mileage_km: 180000   # Fahrzeuge mit mehr km fliegen raus
+min_year: null           # Übung 2: Filter dafür implementieren, dann z. B. 2005 eintragen
+
+# Ad-hoc-Filter: frag beliebige Inserats-Attribute ab, OHNE Code zu ändern.
+# Verfügbare Attribute: alle Felder von CarListing (src/carhunt/models.py).
+# Operatoren: "==", "!=", "<", "<=", ">", ">="
+# Zum Aktivieren die Rauten (#) vor den Regel-Zeilen entfernen:
+custom_filters:
+  # - attribute: first_registration_year
+  #   operator: ">="
+  #   value: 2006
+  # - attribute: mileage_km
+  #   operator: "<="
+  #   value: 150000
